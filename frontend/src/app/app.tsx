@@ -11,10 +11,11 @@ import { ChainSelect } from "@/components/web3/chain-select"
 import { ContractCard } from "@/components/web3/contract-card"
 import { MapAccountButton } from "@/components/web3/map-account-button"
 import type { ChainId, WalletAccount } from "@/lib/reactive-dot/custom-types"
+import { Erc20Card } from "@/components/web3/erc20-card"
 
 export function App() {
   const [account, setAccount] = useState<WalletAccount>()
-  const [chainId, setChainId] = useState<ChainId>("passethub")
+  const [chainId, setChainId] = useState<ChainId>("dev")
 
   return (
     <SignerProvider signer={account?.polkadotSigner}>
@@ -44,13 +45,17 @@ export function App() {
 
           <div className="flex w-full flex-col gap-8">
             {/* Chain Metadata */}
-            <Suspense fallback={<CardSkeleton />}>
+            {/* <Suspense fallback={<CardSkeleton />}>
               <ChainMetaCard />
-            </Suspense>
+            </Suspense> */}
 
             {/* Contract Read & Write */}
             <Suspense fallback={<CardSkeleton />}>
               <ContractCard />
+            </Suspense>
+
+            <Suspense fallback={<CardSkeleton />}>
+              <Erc20Card />
             </Suspense>
           </div>
         </Wrapper>

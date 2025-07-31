@@ -19,11 +19,11 @@ import { writeAddresses } from "./utils/write-addresses"
 const main = async () => {
   const initResult = await initApi()
 
-  const deployResult = await deployContract(initResult, "flipper", contracts.flipper, "new", {
-    init_value: true,
+  const deployResult = await deployContract(initResult, "erc20", contracts.erc20, "new", {
+      total_supply: [1000n, 0n, 0n, 0n]
   })
 
-  await writeAddresses({ flipper: deployResult })
+  await writeAddresses({ erc20: deployResult })
 }
 
 main()
