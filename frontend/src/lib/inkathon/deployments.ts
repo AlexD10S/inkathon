@@ -1,7 +1,7 @@
-// import {
-//   evmAddress as evmAddressDev,
-//   ss58Address as ss58AddressDev,
-// } from "@inkathon/contracts/deployments/flipper/dev"
+import {
+  evmAddress as evmAddressDev,
+  ss58Address as ss58AddressDev,
+} from "@inkathon/contracts/deployments/flipper/dev"
 
 import {
   evmAddress as evmAddressPassethub,
@@ -16,12 +16,12 @@ import { contracts } from "@polkadot-api/descriptors"
 export const flipper = {
   contract: contracts.flipper,
   evmAddresses: {
-    // dev: evmAddressDev,
+    dev: evmAddressDev,
     pop: evmAddressPop,
     passethub: evmAddressPassethub,
   },
   ss58Addresses: {
-    // dev: ss58AddressDev,
+    dev: ss58AddressDev,
     pop: ss58AddressPop,
     passethub: ss58AddressPassethub,
   },

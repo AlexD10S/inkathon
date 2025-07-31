@@ -1,4 +1,4 @@
-import { passethub, pop } from "@polkadot-api/descriptors"
+import { passethub, pop, dev } from "@polkadot-api/descriptors"
 import { defineConfig } from "@reactive-dot/core"
 import { InjectedWalletProvider } from "@reactive-dot/core/wallets.js"
 import { getWsProvider } from "polkadot-api/ws-provider/web"
@@ -8,10 +8,10 @@ import { getWsProvider } from "polkadot-api/ws-provider/web"
 
 export const config = defineConfig({
   chains: {
-    // dev: {
-    //   descriptor: dev,
-    //   provider: getWsProvider("ws://127.0.0.1:9944"),
-    // },
+    dev: {
+      descriptor: dev,
+      provider: getWsProvider("ws://127.0.0.1:9944"),
+    },
     pop: {
       descriptor: pop,
       provider: getWsProvider("wss://rpc1.paseo.popnetwork.xyz"),
