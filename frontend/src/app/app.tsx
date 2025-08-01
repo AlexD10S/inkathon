@@ -15,7 +15,7 @@ import { Erc20Card } from "@/components/web3/erc20-card"
 
 export function App() {
   const [account, setAccount] = useState<WalletAccount>()
-  const [chainId, setChainId] = useState<ChainId>("dev")
+  const [chainId, setChainId] = useState<ChainId>("passethub")
 
   return (
     <SignerProvider signer={account?.polkadotSigner}>
@@ -54,9 +54,6 @@ export function App() {
               <ContractCard />
             </Suspense>
 
-            <Suspense fallback={<CardSkeleton />}>
-              <Erc20Card />
-            </Suspense>
           </div>
         </Wrapper>
       </ChainProvider>

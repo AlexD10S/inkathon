@@ -31,7 +31,7 @@ export function Erc20Card() {
 
       // Create SDK & contract instance
       const sdk = createReviveSdk(api as ReviveSdkTypedApi, erc20.contract)
-      const contract = sdk.getContract(erc20.evmAddresses["dev"])
+      const contract = sdk.getContract(erc20.evmAddresses["passethub"])
 
       // Option 1: Query storage directly
       const storageResult = await contract.getStorage().getRoot()
@@ -74,7 +74,7 @@ export function Erc20Card() {
     if (!api || !chain || !signer) return
 
     const sdk = createReviveSdk(api as ReviveSdkTypedApi, erc20.contract)
-    const contract = sdk.getContract(erc20.evmAddresses["dev"])
+    const contract = sdk.getContract(erc20.evmAddresses["passethub"])
 
     // Map account if not mapped
     const isMapped = await sdk.addressIsMapped(signerAddress)
